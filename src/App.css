@@ -1,38 +1,89 @@
 .App {
-  text-align: center;
+	width: 100%;
+	height: 100%;
+	background-color: #eeeeee;
+	position: fixed;
+	display: grid;
+	place-content: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Login {
+	background-color: #ffffff;
+	width: 450px;
+	height: 465px;
+	border-radius: 0px 0px 5px 5px;
+	filter: drop-shadow(1px 3px 0.3rem grey);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Header { 
+	background: #555e63;
+	width: 100%;
+	height: 100px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.Header h2 {
+	text-align: center;
+	position: relative;
+	color: #eeeeee;
+	top: 52px;
+	font-size: 20px;
+	font-family: sans-serif;
+	font-weight: normal;
 }
 
-.App-link {
-  color: #61dafb;
+.Header .LoginUserIcon {
+	height: 20px;
+	width: 20px;
+	position: fixed;
+	top: -34px;
+	left: 195px;
+	background-color: #555e63;
+	border: solid 9px #eeeeee;
+	border-radius: 50px;
+	content:url('images/user.svg');
+	padding: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.LoginForm {
+	padding: 43px 35px;
+}
+
+.LoginLabel {
+	color: #555e63;
+	font-size: 20px;
+	font-family: sans-serif;
+	font-weight: normal;
+	display: block;
+	padding-bottom: 10px;
+}
+
+.LoginInput {
+	width: 365px;
+	font-size: 20px;
+	background-color: #eeeeee;
+	border-radius: 3px;
+	height: 40px;
+	border: none;
+	margin-bottom: 42px;
+	padding-left: 10px;
+}
+
+.LoginInput:focus {
+	outline: none;
+	border-radius: 3px;
+	background-color: #eeeeee;
+	filter: drop-shadow(1px 0px 0.5rem cornflowerblue);
+}
+
+.LoginButton {
+	background-color: #ff4282;
+	color: #eeeeee;
+	border: none;
+	border-radius: 3px;
+	height: 45px;
+	width: 145px;
+}
+
+.LoginButton:hover {
+	cursor: pointer;
 }

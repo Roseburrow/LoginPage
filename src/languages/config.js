@@ -1,5 +1,5 @@
 export const DEFAULT_LANGUAGE = 'en';
-export const CURRENT_LANGUAGE = 'pirate';
+export const CURRENT_LANGUAGE = 'fr';
 
 const english = require('./english.json');
 const french = require('./french.json');

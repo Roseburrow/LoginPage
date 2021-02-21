@@ -1,3 +1,4 @@
+import Header from './components/header/main';
 import TranslatedText from './components/translated-text/main';
 
 import './App.css';
@@ -6,10 +7,7 @@ function App() {
 	return (
 		<div className="App">
 			<div className="Login">
-				<div className="Header">
-					<div className="LoginUserIcon"></div>
-					<h2><TranslatedText value="welcome_message"/></h2>
-				</div>
+				<Header/>
 				<form className="LoginForm">
 					<label className="LoginLabel" for="username">
 						<TranslatedText value="username_label"/>

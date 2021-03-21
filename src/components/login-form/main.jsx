@@ -11,7 +11,7 @@ function LoginForm(props) {
 	return (
 		<div>
 			<Header language={ language }/>
-			<div className="Login">
+			<div className="LoginContent">
 				<form className="LoginForm">
 					<label className="LoginLabel" for="username">
 						<TranslatedText value="username_label" language={ language } />

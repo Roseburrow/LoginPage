@@ -6,7 +6,7 @@ import TopBar from './components/top-bar/main';
 import './App.css';
 
 function App() {
-	const [language, setLanguage] = useState('en');
+	const [language, setLanguage] = useState('english');
 
 	return (
 		<div className="App">

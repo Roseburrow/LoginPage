@@ -1,21 +1,45 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-import { getTranslatedString } from '../../languages/config';
+const FALLBACK_LANG = 'english';
 
 function TranslatedText(props) {
+	const [translatedText, setTranslatedText] = useState(undefined);
+	const [hasLoaded, setHasLoaded] = useState(false);
+
 	const { value, language } = props;
 
-	function getTranslatedText(stringKey) {
-		let translatedText = getTranslatedString(stringKey, language);
+	useEffect(() => {
+		getTranslatedText(language);
+	}, [ language ])
 
-		if (!translatedText) {
-			translatedText = getTranslatedString(stringKey);
-		}
+	function getTranslatedText(language) {
+		let xhttp = new XMLHttpRequest();
+		let file = `lang/${ language }.json`;
 
-		return translatedText;
+		xhttp.onreadystatechange = function () {
+			if (this.readyState == 4 && this.status == 200) {
+				try {
+					let languageJSON = JSON.parse(this.responseText);
+					let translatedText = languageJSON[value];
+
+					setHasLoaded(true);
+					setTranslatedText(translatedText);
+				}
+				catch (e) {
+					console.log("Error Parsing Language JSON: " + e);
+				}
+			}
+		};
+
+		xhttp.open("GET", file, true);
+		xhttp.send();
 	}
 
-	return getTranslatedText(value);
+	if (hasLoaded && !translatedText) {
+		getTranslatedText(FALLBACK_LANG)
+	}
+
+	return translatedText || 'Loading...';
 }
 
 export default TranslatedText;

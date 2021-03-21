@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { CURRENT_LANGUAGE, getTranslatedString } from '../../languages/config';
+import { getTranslatedString } from '../../languages/config';
 
 function TranslatedText(props) {
-	const { value } = props;
+	const { value, language } = props;
 
 	function getTranslatedText(stringKey) {
-		let translatedText = getTranslatedString(stringKey, CURRENT_LANGUAGE);
+		let translatedText = getTranslatedString(stringKey, language);
 
 		if (!translatedText) {
 			translatedText = getTranslatedString(stringKey);

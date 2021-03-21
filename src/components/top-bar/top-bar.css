@@ -1,0 +1,32 @@
+.TopBar {
+	height: .5rem;
+	padding: 1.8rem;
+}
+
+.TopBarRight {
+	float: right;
+}
+
+.lang-selector {
+	float: right;
+	min-width: 12rem;
+
+	padding: 0.2rem;
+	margin-right: 2rem;
+	
+	font-size: 2rem;
+	border-radius: 3px;
+	border: none;
+
+	color: white;
+	background-color: #555e63;
+}
+
+.lang-icon {
+	float: left;
+	height: 2rem;
+	width: 2rem;
+	content:url('../../images/language-icon.svg');
+	padding: 0.5rem;
+	color: #555e63;
+}

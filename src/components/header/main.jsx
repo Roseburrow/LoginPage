@@ -4,11 +4,13 @@ import TranslatedText from '../translated-text/main';
 
 import './header.css';
 
-function Header() {
+function Header(props) {
+	const { language } = props;
+	
 	return (
 		<div className="Header">
 			<div className="LoginUserIcon"></div>
-			<h2><TranslatedText value="welcome_message" /></h2>
+			<h2><TranslatedText value="welcome_message" language={ language } /></h2>
 		</div>
 	);
 }

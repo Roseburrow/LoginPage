@@ -39,7 +39,7 @@ function TranslatedText(props) {
 		getTranslatedText(FALLBACK_LANG)
 	}
 
-	return translatedText || 'Loading...';
+	return translatedText || '';
 }
 
 export default TranslatedText;

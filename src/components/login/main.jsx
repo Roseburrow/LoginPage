@@ -1,8 +1,7 @@
 import React from 'react';
 
-import Header from '../header/main';
-import TranslatedText from '../translated-text/main';
 import LoginForm from '../login-form/main';
+import LoginHeader from '../login-header/main';
 
 import './login.css';
 
@@ -11,7 +10,7 @@ function Login(props) {
 
 	return (
 		<div>
-			<Header language={ language }/>
+			<LoginHeader language={ language }/>
 			<div className="LoginContent">
 				<LoginForm language={ language }/>
 			</div>

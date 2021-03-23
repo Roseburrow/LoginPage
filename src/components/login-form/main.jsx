@@ -1,24 +1,22 @@
 import React from 'react';
 
-import TranslatedText from '../translated-text/main';
-
 import './login-form.css';
 
 function LoginForm(props) {
-	const { language } = props;
+	const { languageConfig } = props;
 
 	return (
 		<form className="LoginForm">
 			<label className="LoginLabel" for="username">
-				<TranslatedText value="username_label" language={language} />
+				{ languageConfig["username_label"] }
 			</label>
 			<input className="LoginInput" type="text" id="username" name="username" />
 			<label className="LoginLabel" for="password">
-				<TranslatedText value="password_label" language={language} />
+				{ languageConfig["password_label"] }
 			</label>
 			<input className="LoginInput" type="password" id="password" name="password" />
 			<button className="LoginButton">
-				<TranslatedText value="login_label" language={language} />
+				{ languageConfig["login_label"] }
 			</button>
 		</form>
 	);

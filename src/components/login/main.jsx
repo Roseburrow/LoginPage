@@ -13,7 +13,7 @@ function Login(props) {
 	const [languageConfig, setLanguageConfig] = useState({});
 
 	useEffect(() => {
-		loadLanguageConfig(language, (langConfig) => setLanguageConfig(langConfig));
+		loadLanguageConfig(language, 'login', (langConfig) => setLanguageConfig(langConfig));
 	}, [ language ]);
 
 	return (

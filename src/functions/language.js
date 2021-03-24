@@ -1,9 +1,9 @@
 export const FALLBACK_LANG = 'english';
 
-export function getLanguageJSON(page, language) {
+export function getLanguageJSON(language, page) {
 	return new Promise((resolve, reject) => {
 		let xhttp = new XMLHttpRequest();
-		let file = `lang/${ page }/${language}.json`;
+		let file = `lang/${ page }/${ language }.json`;
 
 		xhttp.onreadystatechange = function () {
 			if (this.readyState == 4 && this.status == 200) {
@@ -22,15 +22,15 @@ export function getLanguageJSON(page, language) {
 	});
 }
 
-export function loadLanguageConfig(language, callback) {
+export function loadLanguageConfig(language, page, callback) {
 	Promise.all([
-		getLanguageJSON('login', language),
-		getLanguageJSON('login', FALLBACK_LANG)
+		getLanguageJSON(language, page),
+		getLanguageJSON(FALLBACK_LANG, page)
 	]).then((configs) => {
 		let finalConfig = {};
 
 		configs.forEach((config) => {
-			finalConfig = { ...config, ...finalConfig }
+			finalConfig = { ...config, ...finalConfig };
 		});
 
 		callback(finalConfig);
